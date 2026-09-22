@@ -1,0 +1,75 @@
+@import "variables";
+@import "mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-body;
+  color: $color-dark;
+  background-color: $color-white;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: $font-heading;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  @include section-padding;
+}
+
+.section__inner {
+  @include container;
+}
+
+.section__heading {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  text-align: center;
+
+  &--light {
+    color: $color-white;
+  }
+}
+
+.section__kicker {
+  text-align: center;
+  color: $color-gray;
+  margin-top: 0.5rem;
+  margin-bottom: 3rem;
+  font-size: 1.05rem;
+
+  &--light {
+    color: $color-gray-light;
+  }
+}

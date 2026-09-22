@@ -1,0 +1,152 @@
+@import "variables";
+@import "mixins";
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba($color-dark, 0.85);
+  backdrop-filter: blur(10px);
+  transition: height $transition-base, background-color $transition-base, box-shadow $transition-base;
+
+  &__inner {
+    @include container;
+    height: $navbar-height;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: height $transition-base;
+  }
+
+  &__brand {
+    font-family: $font-heading;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $color-white;
+    letter-spacing: 0.02em;
+    transition: font-size $transition-base;
+
+    span {
+      color: $color-accent;
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: 2.25rem;
+  }
+
+  &__link {
+    position: relative;
+    color: $color-gray-light;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.4rem 0.1rem;
+    transition: color $transition-fast;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 2px;
+      background-color: $color-accent;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform $transition-fast;
+    }
+
+    &:hover {
+      color: $color-white;
+    }
+
+    &.active {
+      color: $color-white;
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  &__toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    span {
+      display: block;
+      height: 2px;
+      width: 100%;
+      background-color: $color-white;
+      border-radius: 2px;
+      transition: transform $transition-fast, opacity $transition-fast;
+    }
+  }
+
+  &.navbar--compact {
+    box-shadow: 0 6px 20px rgba($color-dark, 0.25);
+
+    .navbar__inner {
+      height: $navbar-height-compact;
+    }
+
+    .navbar__brand {
+      font-size: 1.2rem;
+    }
+
+    .navbar__link {
+      font-size: 0.85rem;
+    }
+  }
+
+  @include respond(xs) {
+    &__toggle {
+      display: flex;
+    }
+
+    &__nav {
+      position: fixed;
+      top: $navbar-height-compact;
+      left: 0;
+      width: 100%;
+      background-color: rgba($color-dark, 0.97);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height $transition-base;
+    }
+
+    &__links {
+      flex-direction: column;
+      gap: 0;
+      padding: 0.5rem 2rem 1.5rem;
+    }
+
+    &__link {
+      display: block;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba($color-white, 0.08);
+    }
+
+    &.navbar--open &__nav {
+      max-height: 400px;
+    }
+
+    &__inner {
+      height: $navbar-height-compact;
+    }
+
+    &.navbar--compact .navbar__inner {
+      height: $navbar-height-compact;
+    }
+  }
+}

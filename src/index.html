@@ -1,13 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MP1</title>
-    </head>
-    <body>
-        <h1>Hello World! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jintian Su | Photography</title>
+    <meta
+      name="description"
+      content="A collection of amateur photography from London, Paris, Los Angeles and Chicago by Jintian Su."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%236366f1'/%3E%3Ctext x='50' y='68' font-size='58' font-family='sans-serif' font-weight='700' fill='white' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="navbar" id="navbar">
+      <div class="navbar__inner">
+        <a href="#home" class="navbar__brand">Jintian<span>.</span></a>
+
+        <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="navbar__nav" id="navMenu">
+          <ul class="navbar__links">
+            <li><a href="#home" class="navbar__link active" data-nav-link>Home</a></li>
+            <li><a href="#about" class="navbar__link" data-nav-link>About</a></li>
+            <li><a href="#projects" class="navbar__link" data-nav-link>Galleries</a></li>
+            <li><a href="#showcase" class="navbar__link" data-nav-link>Showcase</a></li>
+            <li><a href="#experience" class="navbar__link" data-nav-link>Reel</a></li>
+            <li><a href="#contact" class="navbar__link" data-nav-link>Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="section hero" data-section>
+        <div class="hero__overlay"></div>
+        <div class="section__inner hero__inner reveal">
+          <p class="hero__eyebrow">Hi, I&rsquo;m</p>
+          <h1 class="hero__title">Jintian Su</h1>
+          <h2 class="hero__subtitle">Just an amateur photographer chasing good light.</h2>
+          <p class="hero__desc">
+            I like wandering around cities I don&rsquo;t know very well and taking pictures of
+            whatever catches my eye. Nothing fancy, just light, people, and random street
+            moments. Here are some shots from four cities I&rsquo;ve visited so far.
+          </p>
+          <div class="hero__actions">
+            <a href="#projects" class="btn btn--primary">View My Galleries</a>
+            <a href="#contact" class="btn btn--outline">Get In Touch</a>
+          </div>
+        </div>
+        <a href="#about" class="hero__scroll-cue" aria-label="Scroll to About section">
+          <i class="fa-solid fa-chevron-down"></i>
+        </a>
+      </section>
+
+      <section id="about" class="section about" data-section>
+        <div class="section__inner">
+          <h2 class="section__heading reveal">About Me</h2>
+          <p class="section__kicker reveal">Get to know me</p>
+
+          <div class="about__grid reveal">
+            <div class="about__photo-wrap">
+              <img
+                class="about__photo"
+                src="assets/photos/profile.jpg"
+                alt="Portrait of Jintian Su"
+                loading="lazy"
+              />
+            </div>
+            <div class="about__content">
+              <p>
+                Hey, I&rsquo;m Jintian Su. I&rsquo;m a computer science student, but in my free
+                time I like walking around with a camera. I started a few years ago just to have
+                better memories of my trips, and now it&rsquo;s turned into a real hobby.
+              </p>
+              <p>
+                I don&rsquo;t really have a specific style or expensive gear. I just like paying
+                attention to good light and small moments when I&rsquo;m somewhere new. So far
+                I&rsquo;ve taken photos in London, Paris, Los Angeles, and Chicago.
+              </p>
+            </div>
+          </div>
+
+          <h3 class="about__skills-heading reveal">What I Shoot</h3>
+          <div class="about__skills reveal">
+            <div class="skill-card">
+              <i class="fa-solid fa-city"></i>
+              <h4>Street Photography</h4>
+              <p>Candid moments and everyday city life</p>
+            </div>
+            <div class="skill-card">
+              <i class="fa-solid fa-building"></i>
+              <h4>Architecture</h4>
+              <p>Lines, symmetry, and skylines</p>
+            </div>
+            <div class="skill-card">
+              <i class="fa-solid fa-user"></i>
+              <h4>Casual Portraits</h4>
+              <p>Friends, strangers, and quiet moments</p>
+            </div>
+            <div class="skill-card">
+              <i class="fa-solid fa-mountain-sun"></i>
+              <h4>Landscapes</h4>
+              <p>Sunsets, skylines, and wide-open views</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section projects" data-section>
+        <div class="section__inner">
+          <h2 class="section__heading reveal">Galleries</h2>
+          <p class="section__kicker reveal">A few cities I&rsquo;ve shot in</p>
+
+          <div class="projects__grid reveal">
+            <article class="project-card" data-modal-target="modal-1">
+              <img
+                src="assets/photos/london.jpg"
+                alt="Photos from London"
+                loading="lazy"
+              />
+              <div class="project-card__body">
+                <h3>London</h3>
+                <p>Grey skies, red buses, and quiet corners of the city.</p>
+                <span class="project-card__cta">View Gallery <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </article>
+
+            <article class="project-card" data-modal-target="modal-2">
+              <img
+                src="assets/photos/paris.jpg"
+                alt="Photos from Paris"
+                loading="lazy"
+              />
+              <div class="project-card__body">
+                <h3>Paris</h3>
+                <p>Golden light, narrow streets, and quiet cafés.</p>
+                <span class="project-card__cta">View Gallery <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </article>
+
+            <article class="project-card" data-modal-target="modal-3">
+              <img
+                src="assets/photos/los-angeles.jpg"
+                alt="Photos from Los Angeles"
+                loading="lazy"
+              />
+              <div class="project-card__body">
+                <h3>Los Angeles</h3>
+                <p>Palm trees, wide streets, and warm evening light.</p>
+                <span class="project-card__cta">View Gallery <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </article>
+
+            <article class="project-card" data-modal-target="modal-4">
+              <img
+                src="assets/photos/chicago.jpg"
+                alt="Photos from Chicago"
+                loading="lazy"
+              />
+              <div class="project-card__body">
+                <h3>Chicago</h3>
+                <p>Skyline views, lake winds, and city grid streets.</p>
+                <span class="project-card__cta">View Gallery <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="showcase" class="section showcase" data-section>
+        <div class="section__inner">
+          <h2 class="section__heading reveal">Showcase</h2>
+          <p class="section__kicker reveal">A few of my favorite shots</p>
+
+          <div class="carousel reveal" id="carousel">
+            <button class="carousel__btn carousel__btn--prev" id="carouselPrev" aria-label="Previous slide">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <div class="carousel__track-wrapper" id="carouselTrackWrapper">
+              <ul class="carousel__track" id="carouselTrack">
+                <li class="carousel__slide">
+                  <img src="assets/photos/london.jpg" alt="Featured shot from London" loading="lazy" />
+                  <div class="carousel__caption">
+                    <h3>London</h3>
+                    <p>Wandering around with no real plan, just chasing good light.</p>
+                  </div>
+                </li>
+                <li class="carousel__slide">
+                  <img src="assets/photos/paris.jpg" alt="Featured shot from Paris" loading="lazy" />
+                  <div class="carousel__caption">
+                    <h3>Paris</h3>
+                    <p>Early mornings before the streets got crowded.</p>
+                  </div>
+                </li>
+                <li class="carousel__slide">
+                  <img src="assets/photos/los-angeles.jpg" alt="Featured shot from Los Angeles" loading="lazy" />
+                  <div class="carousel__caption">
+                    <h3>Los Angeles</h3>
+                    <p>Golden hour is undefeated out here.</p>
+                  </div>
+                </li>
+                <li class="carousel__slide">
+                  <img src="assets/photos/chicago.jpg" alt="Featured shot from Chicago" loading="lazy" />
+                  <div class="carousel__caption">
+                    <h3>Chicago</h3>
+                    <p>Windy, loud, and full of good photo spots.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <button class="carousel__btn carousel__btn--next" id="carouselNext" aria-label="Next slide">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <div class="carousel__dots" id="carouselDots"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="section experience" data-section>
+        <div class="experience__parallax"></div>
+        <div class="section__inner experience__inner reveal">
+          <h2 class="section__heading section__heading--light">Travel Reel</h2>
+          <p class="section__kicker section__kicker--light">A short clip from my trips so far</p>
+
+          <div class="experience__video">
+            <video
+              class="experience__video-player"
+              controls
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+              poster="assets/photos/video-poster.jpg"
+            >
+              <source
+                src="assets/photos/video.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact" data-section>
+        <div class="section__inner contact__inner reveal">
+          <h2 class="section__heading">Let&rsquo;s Connect</h2>
+          <p class="section__kicker">Have a photo tip, or just want to say hi?</p>
+
+          <div class="social-icons">
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="section__inner footer__inner">
+        <p>&copy; 2026 Jintian Su. Built with HTML, SCSS &amp; JavaScript for CS409 MP1.</p>
+      </div>
+    </footer>
+
+    <div class="modal" id="modal-1" data-modal>
+      <div class="modal__overlay" data-modal-close></div>
+      <div class="modal__dialog">
+        <button class="modal__close" data-modal-close aria-label="Close modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img src="assets/photos/london.jpg" alt="London gallery cover" />
+        <h3>London</h3>
+        <p>
+          I spent a week wandering the city with no real itinerary, just following whatever light
+          or street looked interesting. Mostly shot around the South Bank, Shoreditch, and the
+          Underground.
+        </p>
+        <ul class="modal__tags">
+          <li>Street</li>
+          <li>Overcast</li>
+          <li>35mm</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-2" data-modal>
+      <div class="modal__overlay" data-modal-close></div>
+      <div class="modal__dialog">
+        <button class="modal__close" data-modal-close aria-label="Close modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img src="assets/photos/paris.jpg" alt="Paris gallery cover" />
+        <h3>Paris</h3>
+        <p>
+          Early mornings before the streets got crowded, chasing golden light through narrow
+          alleyways and quiet cafés. Still my favorite city to shoot so far.
+        </p>
+        <ul class="modal__tags">
+          <li>Golden Hour</li>
+          <li>Architecture</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-3" data-modal>
+      <div class="modal__overlay" data-modal-close></div>
+      <div class="modal__dialog">
+        <button class="modal__close" data-modal-close aria-label="Close modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img src="assets/photos/los-angeles.jpg" alt="Los Angeles gallery cover" />
+        <h3>Los Angeles</h3>
+        <p>
+          Wide streets, palm trees, and that famous evening light. Spent most of my time shooting
+          around Venice Beach and Downtown LA.
+        </p>
+        <ul class="modal__tags">
+          <li>Sunset</li>
+          <li>Palm Trees</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-4" data-modal>
+      <div class="modal__overlay" data-modal-close></div>
+      <div class="modal__dialog">
+        <button class="modal__close" data-modal-close aria-label="Close modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img src="assets/photos/chicago.jpg" alt="Chicago gallery cover" />
+        <h3>Chicago</h3>
+        <p>
+          Skyline views, lake winds, and a city grid that&rsquo;s surprisingly fun to shoot.
+          Riverwalk at sunset was easily the highlight.
+        </p>
+        <ul class="modal__tags">
+          <li>Skyline</li>
+          <li>Lakefront</li>
+        </ul>
+      </div>
+    </div>
+  </body>
 </html>

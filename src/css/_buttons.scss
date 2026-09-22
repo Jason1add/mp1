@@ -1,0 +1,40 @@
+@import "variables";
+@import "mixins";
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform $transition-fast, box-shadow $transition-fast, background-color $transition-fast, color $transition-fast;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  &--primary {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 10px 25px rgba($color-primary, 0.35);
+
+    &:hover {
+      background-color: $color-primary-dark;
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border-color: rgba($color-white, 0.6);
+    color: $color-white;
+
+    &:hover {
+      background-color: rgba($color-white, 0.1);
+      border-color: $color-white;
+    }
+  }
+}

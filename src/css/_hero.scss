@@ -1,0 +1,116 @@
+@import "variables";
+@import "mixins";
+
+.hero {
+  min-height: 100vh;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(135deg, $color-dark 0%, $color-dark-2 55%, $color-primary-dark 100%),
+    url("../assets/photos/hero-bg.jpg");
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(70px);
+      will-change: transform;
+    }
+
+    &::before {
+      width: 60vw;
+      height: 60vw;
+      top: -20%;
+      left: -15%;
+      background: radial-gradient(circle, rgba($color-primary, 0.85), transparent 70%);
+      animation: blobDrift1 16s ease-in-out infinite;
+    }
+
+    &::after {
+      width: 50vw;
+      height: 50vw;
+      bottom: -25%;
+      right: -15%;
+      background: radial-gradient(circle, rgba($color-accent, 0.75), transparent 70%);
+      animation: blobDrift2 20s ease-in-out infinite;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    text-align: center;
+    @include flex-center(column);
+  }
+
+  &__eyebrow {
+    color: $color-accent;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: clamp(2.6rem, 7vw, 4.5rem);
+    font-weight: 800;
+    color: $color-white;
+    margin-bottom: 0.75rem;
+  }
+
+  &__subtitle {
+    font-size: clamp(1.2rem, 3vw, 1.7rem);
+    font-weight: 600;
+    color: $color-gray-light;
+    margin-bottom: 1.25rem;
+  }
+
+  &__desc {
+    color: rgba($color-gray-light, 0.85);
+    font-size: 1.05rem;
+    margin-bottom: 2.25rem;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__scroll-cue {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $color-white;
+    font-size: 1.4rem;
+    animation: pulse 2s ease-in-out infinite;
+    z-index: 1;
+  }
+
+  @include respond(xs) {
+    text-align: center;
+
+    &__actions {
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+    }
+  }
+}

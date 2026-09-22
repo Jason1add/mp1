@@ -1,0 +1,55 @@
+@import "variables";
+
+@mixin respond($bp) {
+  @if $bp == xl {
+    @media (max-width: $bp-xl) { @content; }
+  } @else if $bp == lg {
+    @media (max-width: $bp-lg) { @content; }
+  } @else if $bp == md {
+    @media (max-width: $bp-md) { @content; }
+  } @else if $bp == sm {
+    @media (max-width: $bp-sm) { @content; }
+  } @else if $bp == xs {
+    @media (max-width: $bp-xs) { @content; }
+  }
+}
+
+@mixin flex-center($direction: row) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+}
+
+@mixin container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@mixin section-padding {
+  padding-top: $section-padding-y;
+  padding-bottom: $section-padding-y;
+
+  @include respond(xs) {
+    padding-top: $section-padding-y * 0.6;
+    padding-bottom: $section-padding-y * 0.6;
+  }
+}
+
+@mixin fixed-background($url) {
+  background-image: linear-gradient(rgba($color-dark, 0.75), rgba($color-dark, 0.85)), url($url);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  @include respond(xs) {
+    background-attachment: scroll;
+  }
+}
+
+@mixin card-shadow {
+  box-shadow: 0 10px 30px rgba($color-dark, 0.08);
+}

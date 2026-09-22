@@ -1,0 +1,42 @@
+@import "variables";
+@import "mixins";
+
+.contact {
+  background-color: $color-dark;
+  color: $color-white;
+  text-align: center;
+
+  .section__heading {
+    color: $color-white;
+  }
+
+  .section__kicker {
+    color: $color-gray-light;
+  }
+}
+
+.contact__inner {
+  @include flex-center(column);
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.25rem;
+
+  a {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba($color-white, 0.25);
+    @include flex-center;
+    color: $color-white;
+    font-size: 1.2rem;
+    transition: background-color $transition-fast, transform $transition-fast, border-color $transition-fast;
+
+    &:hover {
+      background-color: $color-primary;
+      border-color: $color-primary;
+      transform: translateY(-4px);
+    }
+  }
+}
